@@ -1,0 +1,7 @@
+<h1>OAuth Client Callback</h1>
+
+<p>
+  Here is your access token: <span data-cy="access-token"><%= session[:token] %></span>
+</p>
+
+<%= link_to 'Back', oauth_client_path(@oauth_client) %>

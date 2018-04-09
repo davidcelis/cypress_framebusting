@@ -1,0 +1,2 @@
+class GithubConnection < ApplicationRecord
+end

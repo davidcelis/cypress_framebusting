@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>OAuth Clients</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Client</th>
+      <th>Client secret</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @oauth_clients.each do |oauth_client| %>
+      <tr>
+        <td><%= oauth_client.client_id %></td>
+        <td><%= oauth_client.client_secret %></td>
+        <td><%= link_to 'Show', oauth_client %></td>
+        <td><%= link_to 'Edit', edit_oauth_client_path(oauth_client) %></td>
+        <td><%= link_to 'Destroy', oauth_client, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New OAuth Client', new_oauth_client_path, data: { cy: 'new-oauth-client-link' } %>

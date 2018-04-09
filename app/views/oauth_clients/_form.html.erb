@@ -1,0 +1,27 @@
+<%= form_with(model: oauth_client, local: true) do |form| %>
+  <% if oauth_client.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(oauth_client.errors.count, "error") %> prohibited this oauth_client from being saved:</h2>
+
+      <ul>
+      <% oauth_client.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :client_id %>
+    <%= form.text_field :client_id, id: :oauth_client_client_id, data: { cy: 'client-id-field' } %>
+  </div>
+
+  <div class="field">
+    <%= form.label :client_secret %>
+    <%= form.text_field :client_secret, id: :oauth_client_client_secret, data: { cy: 'client-secret-field' } %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit data: { cy: 'submit' } %>
+  </div>
+<% end %>
